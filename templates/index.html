@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <title>上海实习数据可视化</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.png" rel="icon">
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+</head>
+
+<body>
+
+    <div id="loading-animation"  style=" width:100%;height: 100%;">
+    </div>
+<script type="text/javascript">
+  // 在页面加载完成前显示加载动画
+  var dom = document.getElementById('loading-animation');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
+  var app = {};
+
+  var option = {
+    // 加载动画的配置选项
+    graphic: {
+      elements: [
+        {
+          type: 'group',
+          left: 'center',
+          top: 'center',
+          children: new Array(7).fill(0).map((val, i) => ({
+            type: 'rect',
+            x: i * 20,
+            shape: {
+              x: 0,
+              y: -40,
+              width: 10,
+              height: 80
+            },
+            style: {
+              fill: '#5470c6'
+            },
+            keyframeAnimation: {
+              duration: 1000,
+              delay: i * 200,
+              loop: true,
+              keyframes: [
+                {
+                  percent: 0.5,
+                  scaleY: 0.3,
+                  easing: 'cubicIn'
+                },
+                {
+                  percent: 1,
+                  scaleY: 1,
+                  easing: 'cubicOut'
+                }
+              ]
+            }
+          }))
+        }
+      ]
+    }
+  };
+
+  myChart.setOption(option);
+
+  // 监听页面加载完成事件
+  window.addEventListener('load', function() {
+    // 隐藏加载动画，可以根据需要添加其他操作
+      // 延迟5秒隐藏加载动画
+
+      setTimeout(function() {
+        // 隐藏加载动画
+        dom.style.display = 'none';
+      }, 5000); // 5000毫秒即5秒
+  });
+
+  // 监听窗口大小改变事件，重新调整图表大小
+  window.addEventListener('resize', function() {
+    myChart.resize();
+  });
+</script>
+
+    <section id="topbar" class="d-none d-lg-block">
+            <div class="container clearfix">
+              <div class="contact-info float-left">
+                <i class="icofont-clock-time">北京时间</i><a id="bjsj" >--</a>
+                <i class="icofont-eye-alt">数据更新时间</i><a id="ly" >--</a>
+              </div>
+              <div class="social-links float-right">
+                  <i class="heade"><div class="sjly">数据来源：实习僧、BOSS直聘</div></i>
+              </div>
+            </div>
+    </section>
+
+
+
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/temp"><span>DataVis</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="temp.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home<i class="la la-angle-down"></i></a></li>
+          <li><a href="/map">Map</a></li>
+          <li><a href="/graph">Graph</a></li>
+          <li><a href="/word">WordCloud</a></li>
+          <li><a href="/team">Team</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>上海互联网实习数据实时可视化</h2>
+          <p>应用Python爬虫、Django框架、Echarts、WordCloud、SQLite3、Redis、celery等技术实现</p>
+        </div>
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
+              <a href="/map">
+            <div class="count-box">
+              <i class="icofont-world" style="color: #20b38e;"></i>
+              <span id="count" data-toggle="counter-up">850</span>
+              <p>地图可视化</p>
+            </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+              <a href="/graph">
+            <div class="count-box">
+              <i class="icofont-document-folder" style="color: #c042ff;"></i>
+              <span data-toggle="counter-up">6</span>
+              <p>文本可视化</p>
+            </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+             <a href="/word">
+                <div class="count-box">
+                 <i class="icofont-cloudapp" style="color: #46d1ff;"></i>
+                <span id="cloud_count" data-toggle="counter-up">56931</span>
+                 <p>词云统计</p>
+                </div>
+             </a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
+            <a href="/team">
+            <div class="count-box">
+              <i class="icofont-spanner" style="color: #ffb459;"></i>
+              <span data-toggle="counter-up">4</span>
+              <p>开发文档</p>
+            </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+      </div>
+    </section>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        if (error) {
+            alert("错误信息：" + error);
+        }
+    </script>
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>手动更新</h2>
+            <p>数据每隔30分钟会进行自动更新</p>
+            <p>输入正确的账户与密码，即可立刻更新一次数据。</p>
+            <p>有任何问题，可以通过以下方式进行联系</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="info-box">
+              <i class="bx bx-map"></i>
+              <h3>Our Address</h3>
+              <p>ECNU</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-box">
+              <i class="bx bx-envelope"></i>
+              <h3>Email Us</h3>
+              <p>junhqin@163.com<br></p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-box ">
+              <i class="bx bx-phone-call"></i>
+              <h3>Call Us</h3>
+              <p>+8612345678<br></p>
+            </div>
+          </div>
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+            <form action="/login" method="post" role="form" class="php-email-form">
+
+              <div class="form-column" style="place-items: center;display: grid;" >
+                <div class="col-lg-6 form-group">
+                  <input type="text" class="form-control" placeholder="Your Username"  name="username">
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-6 form-group">
+                  <input type="password" class="form-control" placeholder="Your Password" name="password">
+                  <div class="validate"></div>
+                </div>
+              </div>
+
+              <div class="text-center"><button type="submit">Update</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Us Section -->
+
+
+
+</div>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>data.junhqin.com</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+{#  <script src="../static/assets/vendor/php-email-form/validate.js"></script>#}
+  <script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/index.js"></script>
+  <script src="../static/assets/js/main.js"></script>
+
+
+
+</body>
+</html>

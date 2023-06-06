@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>地图可视化</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.png" rel="icon">
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=W1NMxSBKzN1cF8M4xn5jyNS5u2sWGWZA"></script>
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<script>
+    var points = JSON.parse('{{ points|escapejs }}');
+    window.pointsData = points; // 将数据暴露给全局作用域
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
+    <!--topbar -->
+    <section id="topbar" class="d-none d-lg-block">
+            <div class="container clearfix">
+              <div class="contact-info float-left">
+                <i class="icofont-clock-time">北京时间</i><a id="bjsj" >---</a>
+                <i class="icofont-eye-alt">数据更新时间</i><a id="ly" >---</a>
+              </div>
+              <div class="social-links float-right">
+                  <i class="heade"><div class="sjly">数据来源：实习僧、BOSS直聘</div></i>
+              </div>
+            </div>
+    </section>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/"><span>Datavis</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="temp.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="active"><a href="/map">Map<i class="la la-angle-down"></i></a></li>
+          <li><a href="/graph">Graph</a></li>
+          <li><a href="/word">WordCloud</a></li>
+          <li><a href="/team">Team</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+
+        <!-- ======= Our Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="section-title">
+          <h2>Map</h2>
+          <p>调用百度API实现</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter=".filter-app" id="heatmap" >切换为热力图</li>
+              <li data-filter=".filter-card" id="polyline">切换成坐标图</li>
+              <li data-filter=".filter-web" id="line">去除连线</li>
+                <li data-filter=".filter-web" id="reset">还原视图</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container1" style="width:100%;height:800px;">
+        </div>
+
+
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>junhqin.com</span></strong>. All Rights Reserved
+      </div>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+
+  <script src="../static/assets/js/main.js"></script>
+  <script src="../static/assets/js/map.js"></script>
+  <script src="../static/assets/js/index.js"></script>
+</body>
+
+</html>

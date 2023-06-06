@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="../static/assets/js/echarts.min.js"></script>
+
+  <title>数据可视化</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.png" rel="icon">
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js"></script>
+</head>
+
+<body>
+    <section id="topbar" class="d-none d-lg-block">
+            <div class="container clearfix">
+              <div class="contact-info float-left">
+                <i class="icofont-clock-time">北京时间</i><a id="bjsj" >---</a>
+                <i class="icofont-eye-alt">数据更新时间</i><a id="ly" >---</a>
+              </div>
+              <div class="social-links float-right">
+                  <i class="heade"><div class="sjly">数据来源：实习僧、BOSS直聘</div></i>
+              </div>
+            </div>
+    </section>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/"><span>Datavis</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="temp.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/map">Map</a></li>
+          <li class="active"><a href="/">Graph<i class="la la-angle-down"></i></a></li>
+          <li><a href="/word">WordCloud</a></li>
+          <li><a href="/team">Team</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Graphs</h2>
+        </div>
+
+    <nav class="nav-menu">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+          <a href="#team1"><div class="icon"><i class="icofont-computer"></i></div></a>
+          <h4 class="title"><a href="#team1">学历与薪资图</a></h4>
+            <p class="description">
+            <li>描述：反映大专，本科，硕士，不限等学历</li>
+            <li>实习日薪的情况 采用饼图呈现</li>
+            </p>
+        </div>
+        <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+          <a href="#team2"><div class="icon"><i class="icofont-chart-bar-graph"></i></div></a>
+          <h4 class="title"><a href="#team2">编程语言需求量图</a></h4>
+          <p class="description">
+            <li>描述：反映上海实习市场对于Java，python，</li>
+            <li> C等语言的需求情况 采用漏斗图呈现</li>
+            </p>
+        </div>
+        <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+          <a href="#team3"><div class="icon"><i class="icofont-chart-bar-graph"></i></div></a>
+          <h4 class="title"><a href="#team3">技术需求量分布图</a></h4>
+            <p class="description">
+            <li>描述：根据岗位描述通过关键词分析获得公司对技术需求的情况</li>
+            <li>采用柱状图呈现</li>
+            </p>
+        </div>
+        <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+          <a href="#team4"><div class="icon"><i class="icofont-image"></i></div></a>
+          <h4 class="title"><a href="#team4">岗位需求数量图</a></h4>
+          <p class="description">
+            <li>描述：通过饼图呈现安全、游戏、测试等岗位的需求数量对比</li>
+          </p>
+        </div>
+
+      <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+        <a href="#team5"><div class="icon"><i class="icofont-settings"></i></div></a>
+        <h4 class="title"><a href="#team5">薪资盒须图</a></h4>
+        <p class="description">描述：呈现整体薪资分布情况</p>
+      </div>
+
+
+
+      <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+        <a href="#team6"><div class="icon"><i class="icofont-tasks-alt"></i></div></a>
+        <h4 class="title"><a href="#team6">桑葚图</a></h4>
+        <p class="description">描述：通过桑葚图的形式呈现上海市地区中各个岗位的数量</p>
+      </div>
+      </div>
+    </nav>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+
+            <!-- ======= Our Team Section ======= -->
+    <section id="team1" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>图1</h2>
+        </div>
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="g1" style="width: 100%;height:600px"></div>
+      </div>
+    </section><!-- End Counts Section -->  <!-- ======= Our Team Section ======= -->
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+
+
+
+            <!-- ======= Our Team Section ======= -->
+    <section id="team2" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>② 编程语言需求量漏斗图</h2>
+        </div>
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="g2" style="width: 100%;height:600px"></div>
+      </div>
+    </section><!-- End Counts Section -->  <!-- ======= Our Team Section ======= -->
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+
+
+              <!-- ======= Our Team Section ======= -->
+    <section id="team3" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>③ 技术需求分布柱状图</h2>
+        </div>
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="g3" style="width: 100%;height:600px"></div>
+      </div>
+    </section><!-- End Counts Section -->  <!-- ======= Our Team Section ======= -->
+      </div>
+    </section><!-- End Our Team Section -->
+
+                      <!-- ======= Our Team Section ======= -->
+    <section id="team4" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>④岗位数量饼图</h2>
+        </div>
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="g4" style="width: 100%;height:600px"></div>
+      </div>
+    </section><!-- End Counts Section -->  <!-- ======= Our Team Section ======= -->
+      </div>
+    </section><!-- End Our Team Section -->
+
+                      <!-- ======= Our Team Section ======= -->
+    <section id="team5" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>⑤ 薪资盒须图</h2>
+        </div>
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="main5"  style="width: 100%; height: 600px; display: flex; justify-content: center; align-items: center;">
+                 <img src="../static/assets/img/盒须图.png"  >
+            </div>
+
+      </div>
+    </section><!-- End Counts Section -->  <!-- ======= Our Team Section ======= -->
+      </div>
+    </section><!-- End Our Team Section -->
+
+            <!-- ======= Our Team Section ======= -->
+    <section id="team6" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>⑥ 桑葚图（地区/岗位）</h2>
+        </div>
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="g6" class="chart-container" style="width:100%;height:6000px"></div>
+      </div>
+    </section><!-- End Counts Section -->  <!-- ======= Our Team Section ======= -->
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Mamba</span></strong>. All Rights Reserved
+      </div>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#header" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+  <script src="../static/assets/js/index.js"></script>
+  <script src="../static/assets/js/graph.js"></script>
+
+</body>
+
+</html>

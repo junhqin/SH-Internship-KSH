@@ -1,0 +1,54 @@
+[
+  {
+    "name": "安全",
+    "value": 3
+  },
+  {
+    "name": "运维",
+    "value": 6
+  },
+  {
+    "name": "IOS",
+    "value": 11
+  },
+  {
+    "name": "游戏",
+    "value": 12
+  },
+  {
+    "name": "产品",
+    "value": 13
+  },
+  {
+    "name": "硬件",
+    "value": 22
+  },
+  {
+    "name": "测试",
+    "value": 36
+  },
+  {
+    "name": "数据",
+    "value": 38
+  },
+  {
+    "name": "前端",
+    "value": 64
+  },
+  {
+    "name": "软件",
+    "value": 83
+  },
+  {
+    "name": "后端",
+    "value": 152
+  },
+  {
+    "name": "算法",
+    "value": 157
+  },
+  {
+    "name": "开发",
+    "value": 171
+  }
+]

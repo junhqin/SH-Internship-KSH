@@ -1,0 +1,54 @@
+[
+  {
+    "value": 427,
+    "name": "JAVA"
+  },
+  {
+    "value": 344,
+    "name": "PYTHON"
+  },
+  {
+    "value": 283,
+    "name": "C++"
+  },
+  {
+    "value": 112,
+    "name": "HTML"
+  },
+  {
+    "value": 189,
+    "name": "JAVASCRIPT"
+  },
+  {
+    "value": 98,
+    "name": "CSS"
+  },
+  {
+    "value": 108,
+    "name": "MYSQL"
+  },
+  {
+    "value": 75,
+    "name": "UNITY"
+  },
+  {
+    "value": 68,
+    "name": "C#"
+  },
+  {
+    "value": 60,
+    "name": "IOS"
+  },
+  {
+    "value": 73,
+    "name": "GOLANG"
+  },
+  {
+    "value": 32,
+    "name": "SHELL"
+  },
+  {
+    "value": 17,
+    "name": "PHP"
+  }
+]

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>词云展示</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.png" rel="icon">
+  <link href="https://z3.ax1x.com/2021/02/09/yawIzV.pngs" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--topbar -->
+    <section id="topbar" class="d-none d-lg-block">
+            <div class="container clearfix">
+              <div class="contact-info float-left">
+                <i class="icofont-clock-time">北京时间</i><a id="bjsj" >---</a>
+                <i class="icofont-eye-alt">数据更新时间</i><a id="ly" >---</a>
+              </div>
+              <div class="social-links float-right">
+                  <i class="heade"><div class="sjly">数据来源：实习僧、BOSS直聘</div></i>
+              </div>
+            </div>
+    </section>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/"><span>datavis</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="temp.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/map">Map</a></li>
+          <li><a href="/graph">Graph</a></li>
+          <li class="active"><a href="/">WordCloud<i class="la la-angle-down"></i></a></li>
+          <li><a href="/team">Team</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+ <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 video-box">
+            <img src="../static/assets/img/cloud.png" class="img-fluid" alt="">
+
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+
+            <div class="section-title">
+              <h2>词频统计</h2>
+              <p>根据实习职位描述，提炼出词云树，可以让我们更加清晰地看到现在社会对各项岗位职能的需求程度</p>
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+   <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>实习信息爬取展示</h2>
+        </div>
+
+        <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+
+          <table class="table table-striped">
+
+              <tr>
+                  <td>id</td>
+                  <td>岗位名称</td>
+                  <td>公司名称</td>
+                  <td>薪资</td>
+                  <td>工作地点</td>
+                  <td class="custom-row">岗位描述</td>
+                  <td>其他信息</td>
+              </tr>
+
+              {% for job in page_obj %}
+              <tr>
+                  <td>{{job.10}}</td>
+                  <td>
+                      <a href="{{ job.0 }}" target="_blank">
+                      {{ job.1 }}
+                        </a>
+                  </td>
+                  <td>{{job.2}}</td>
+                  <td>{{job.3}}</td>
+                  <td>{{job.4}}</td>
+                  <td>
+                    <div style="width: 450px; ">{{job.8}}</div>
+                  </td>
+                  <td>
+                    <div style="width: 110px;">{{job.5}} {{ job.6 }} {{ job.7 }}</div>
+                  </td>
+              </tr>
+
+              {% endfor %}
+          </table>
+           <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">第一页</a>
+                <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
+            {% endif %}
+
+            <span class="current-page">
+                第 {{ page_obj.number }} 页 / 共 {{ page_obj.paginator.num_pages }} 页
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">下一页</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">最后一页</a>
+            {% endif %}
+        </span>
+            </div>
+      </div>
+        </section><!-- End Counts Section -->
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>junhqin.com</span></strong>. All Rights Reserved
+      </div>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#header" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+  <script src="/static/assets/js/index.js"></script>
+</body>
+
+</html>
