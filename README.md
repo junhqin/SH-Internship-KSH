@@ -10,7 +10,7 @@ html+ python +django +爬虫 +pyecharts+celery
 生成迁移文件 python manage.py makemigrations
 
 执行迁移 python manage.py migrate
-
+  。。。
 启动项目
 python manage.py runserver
 执行分布式任务队列
